@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-lg-offset-3 col-md-offset-2">
+            <div class="card"> 
+                    <ul class="nav nav-tabs nav-justified">
+                      <li class="nav-item" routerLinkActive="active">
+                          <a id="sign-in" routerLink="/login" routerLinkActive='active'
+                          ><h4>Login</h4></a>
+                      </li>
+                      <li class="nav-item" routerLinkActive="active">
+                          <a id="sign-up" routerLink="/signup" routerLinkActive='active'
+                          ><h4>Sign-up</h4></a>
+                      </li>
+                    </ul>        
+                <div>
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
