@@ -12,6 +12,7 @@ import { SignInComponent } from './user/sign-in/sign-in.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
 import { appRoutes } from './routes';
+import { UserService } from './shared/user.service';
 
 
 
@@ -31,7 +32,7 @@ import { appRoutes } from './routes';
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
     ],
-  providers: [ 
+  providers: [ UserService
     ],
   bootstrap: [AppComponent]
 })

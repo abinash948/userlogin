@@ -7,9 +7,10 @@ import { UserService } from 'src/app/shared/user.service';
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
+
 })
 export class SignUpComponent implements OnInit {
-  
+
   signupForm: FormGroup;
 
   constructor(private router: Router, private userService: UserService) { }
@@ -27,7 +28,6 @@ export class SignUpComponent implements OnInit {
     
     this.signupForm.reset();
     this.userService.newSignedUp.next(true);
-    
     this.router.navigate(['/login']);
   }
 

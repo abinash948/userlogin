@@ -2,6 +2,7 @@
     <i class="material-icons">error</i> 
     Incorrect username or password
 </div> -->
+<p>{{newUser}}</p>
 <p *ngIf="newUser" class="success-signedup"> Successfully signed up. Please login again! </p>  
 <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
    <div class="form-group">

@@ -7,11 +7,12 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  styleUrls: ['./sign-in.component.css'],
+
 })
-export class SignInComponent implements OnInit, OnDestroy {
+export class SignInComponent implements OnInit {
    newUser = false;
-   private activatedSub : Subscription;
+   //private activatedSub : Subscription;
    signinForm: FormGroup;
 
   constructor(private router: Router, private newSignedService: UserService) { }
@@ -22,18 +23,20 @@ export class SignInComponent implements OnInit, OnDestroy {
       'loginpassword': new FormControl(null, [Validators.required,Validators.minLength(6)])
     });
 
-    this.activatedSub = this.newSignedService.newSignedUp.subscribe(data=>{
+      this.newSignedService.newSignedUp.subscribe(data=>{
+      console.log(data);
       this.newUser = data;
-    });
+      console.log(this.newUser);
+      return this.newUser;
+    });  
 
+       console.log(this.newUser);
     
   }
+
   onSubmit(){
-    
      this.router.navigate(['/home']);
    }
 
-   ngOnDestroy(){
-     this.activatedSub.unsubscribe();
-   }
 }
+   
