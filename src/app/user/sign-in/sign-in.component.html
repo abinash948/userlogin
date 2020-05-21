@@ -12,6 +12,6 @@
         <label for="password"> <h4> Password </h4> </label>
         <input type="text" class="form-control" id="loginpassword" formControlName="loginpassword"  placeholder="Password" >
     </div>
-        <button class="btn btn-primary" type="submit">Login</button>
+        <button [disabled]="!signinForm.valid" class="btn btn-primary" type="submit">Login</button>
 </form>
  

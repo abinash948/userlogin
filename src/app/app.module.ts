@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from'@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StorageServiceModule } from 'ngx-webstorage-service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { appRoutes } from './routes';
     BrowserModule,
     StorageServiceModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
     ],
   providers: [ 

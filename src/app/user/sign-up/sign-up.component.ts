@@ -27,6 +27,7 @@ export class SignUpComponent implements OnInit {
     
     this.signupForm.reset();
     this.userService.newSignedUp.next(true);
+    
     this.router.navigate(['/login']);
   }
 
