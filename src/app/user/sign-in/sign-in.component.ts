@@ -27,10 +27,9 @@ export class SignInComponent implements OnInit {
       console.log(data);
       this.newUser = data;
       console.log(this.newUser);
-      return this.newUser;
     });  
 
-       console.log(this.newUser);
+      console.log(this.newUser);
     
   }
 
