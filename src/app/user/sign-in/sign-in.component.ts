@@ -14,6 +14,8 @@ export class SignInComponent implements OnInit {
    newUser = false;
    //private activatedSub : Subscription;
    signinForm: FormGroup;
+   loginUserName: string;
+   password: string;
 
   constructor(private router: Router, private newSignedService: UserService) { }
 
@@ -24,17 +26,25 @@ export class SignInComponent implements OnInit {
     });
 
       this.newSignedService.newSignedUp.subscribe(data=>{
-      console.log(data);
       this.newUser = data;
-      console.log(this.newUser);
     });  
 
-      console.log(this.newUser);
-    
   }
 
   onSubmit(){
-     this.router.navigate(['/home']);
+      this.loginUserName = this.signinForm.value.userloginname;
+
+      var id = this.newSignedService.getItem(this.loginUserName);
+      this.password = this.signinForm.value.loginpassword;
+      
+      if(this.password == id.password){
+        this.correctSubmit();
+      }
+     
+   }
+
+   correctSubmit(){
+    this.router.navigate(['/home']);
    }
 
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/user.service';
+import { User } from 'src/app/shared/user.model';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -12,6 +14,7 @@ import { UserService } from 'src/app/shared/user.service';
 export class SignUpComponent implements OnInit {
 
   signupForm: FormGroup;
+  username: string;
 
   constructor(private router: Router, private userService: UserService) { }
 
@@ -25,6 +28,16 @@ export class SignUpComponent implements OnInit {
   }
 
   onSignUp(){
+     this.username =  this.signupForm.value.username;
+
+     const newsignup: User = {
+       name: this.signupForm.value.name,
+       username: this.signupForm.value.username,
+       password: this.signupForm.value.password,
+       email: this.signupForm.value.email
+     }
+
+    this.userService.addItem(this.username, newsignup);
     
     this.signupForm.reset();
     this.userService.newSignedUp.next(true);

@@ -17,6 +17,7 @@ import { UserService } from './shared/user.service';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,8 +33,7 @@ import { UserService } from './shared/user.service';
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
     ],
-  providers: [ UserService
-    ],
+  providers: [ UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
