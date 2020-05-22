@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Key } from 'protractor';
 import { User } from './user.model';
 
 @Injectable({
@@ -23,7 +22,11 @@ export class UserService {
         var item = localStorage.getItem(key);
       }
     }
-      var password = JSON.parse(item);
-      return password;
+      if(item == undefined){
+        return false;
+      } else {
+        var password = JSON.parse(item);
+        return password;
+      }
   }
 }

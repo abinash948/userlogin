@@ -1,8 +1,10 @@
-<!-- <div *ngIf="isLoginError" class="red-text center error-message">
-    <i class="material-icons">error</i> 
+<div *ngIf="isLoginError" class="loginerror">
     Incorrect username or password
-</div> -->
-<p>{{newUser}}</p>
+</div>
+<div *ngIf="userNameError" class="loginerror">
+    Please Sign up.Then Login!
+</div>
+<!-- <p>{{newUser}}</p> -->
 <p *ngIf="newUser" class="success-signedup"> Successfully signed up. Please login again! </p>  
 <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
    <div class="form-group">

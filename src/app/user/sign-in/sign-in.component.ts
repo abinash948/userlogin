@@ -16,6 +16,8 @@ export class SignInComponent implements OnInit {
    signinForm: FormGroup;
    loginUserName: string;
    password: string;
+   isLoginError = false;
+   userNameError = false;
 
   constructor(private router: Router, private newSignedService: UserService) { }
 
@@ -33,14 +35,21 @@ export class SignInComponent implements OnInit {
 
   onSubmit(){
       this.loginUserName = this.signinForm.value.userloginname;
+      this.password = this.signinForm.value.loginpassword;
 
       var id = this.newSignedService.getItem(this.loginUserName);
-      this.password = this.signinForm.value.loginpassword;
-      
-      if(this.password == id.password){
-        this.correctSubmit();
+      console.log(id);
+      if(id == false){
+        this.userNameError = true;
+        this.isLoginError = false;
       }
-     
+      else if(this.password != id.password){
+        this.isLoginError = true;
+        this.userNameError = false;
+      }
+      else if(this.password == id.password){
+        this.correctSubmit();
+      }     
    }
 
    correctSubmit(){
