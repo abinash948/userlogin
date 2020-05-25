@@ -7,7 +7,7 @@ import { User } from './user.model';
 })
 export class UserService {
 
-  newSignedUp = new Subject<boolean>();
+   newSignedUp = new Subject<boolean>();
   
   constructor() { }
 
@@ -30,11 +30,12 @@ export class UserService {
       }
   }
 
-  validator(){
-    var archive = [];
-        for (var i = 0; i<localStorage.length; i++) {
-            archive[i] = localStorage.key(i);
-        }
-    return archive;
-  }
+  // validator(){
+  //   var archive: string[];
+  //       for (var i = 0; i<localStorage.length; i++) {
+  //           archive[i] = localStorage.key(i);
+  //       }
+  //   return archive;
+  // }
+
 }

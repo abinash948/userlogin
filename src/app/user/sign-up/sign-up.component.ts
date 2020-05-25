@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/user.service';
 import { User } from 'src/app/shared/user.model';
@@ -12,7 +12,7 @@ import { User } from 'src/app/shared/user.model';
 
 })
 export class SignUpComponent implements OnInit {
-
+  
   signupForm: FormGroup;
   username: string;
 
@@ -38,24 +38,40 @@ export class SignUpComponent implements OnInit {
      }
 
     this.userService.addItem(this.username, newsignup);
-    
+
     this.signupForm.reset();
-    this.userService.newSignedUp.next(true);
+    //this.userService.newSignedUp.next(true);
     this.router.navigate(['/login']);
   }
+
+  
 }
 
-// function usernameValidator(control: FormControl): {[key: string]: boolean} | null{
-//   const username = control.value;
-//   const existingUsers = this.userService.validator();
-//   for(var i=0;i<existingUsers.length;i++){
-//     if(username ==  existingUsers[i]){
-//       return {'usernameError': true}
+// function usernameValidator(control: AbstractControl):{[key: string]: boolean} | null {
+//     const username = control.value;
+//     console.log(localStorage.key(i));
+//     var archive: string[];
+  
+//     for (var i = 0; i<localStorage.length; i++) {
+//       console.log(localStorage.key(i));
+//       console.log(archive[i]);
+//         archive[i] = localStorage.key(i);
+//         console.log(archive[i]);
+//         console.log(localStorage.key(i));
 //     }
-//     else{
-//       return null;
+//     for(var i=0;i<archive.length;i++){
+//       if(username ==  archive[i]){
+//         //console.log(username);
+//         //console.log(existingUsers[i]);
+//         return {'usernameError': true}
+//       }
+//       else{
+//         return null;
+//       }
 //     }
-//    }
-//  }
+//   }
+  
+
+  
 
 

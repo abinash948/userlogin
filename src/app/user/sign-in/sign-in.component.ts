@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class SignInComponent implements OnInit {
    newUser = false;
-   //private activatedSub : Subscription;
+   
    signinForm: FormGroup;
    loginUserName: string;
    password: string;
@@ -31,6 +31,7 @@ export class SignInComponent implements OnInit {
       this.newUser = data;
     });  
 
+    
   }
 
   onSubmit(){
