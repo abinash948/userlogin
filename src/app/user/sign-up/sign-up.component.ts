@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/shared/user.service';
 import { User } from 'src/app/shared/user.model';
@@ -43,5 +43,19 @@ export class SignUpComponent implements OnInit {
     this.userService.newSignedUp.next(true);
     this.router.navigate(['/login']);
   }
-
 }
+
+// function usernameValidator(control: FormControl): {[key: string]: boolean} | null{
+//   const username = control.value;
+//   const existingUsers = this.userService.validator();
+//   for(var i=0;i<existingUsers.length;i++){
+//     if(username ==  existingUsers[i]){
+//       return {'usernameError': true}
+//     }
+//     else{
+//       return null;
+//     }
+//    }
+//  }
+
+
