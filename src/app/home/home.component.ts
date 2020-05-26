@@ -12,25 +12,29 @@ import { AfterViewInit,ElementRef } from
 })
 export class HomeComponent implements OnInit,AfterViewInit {
 
-  // @ViewChild('map') mapElement: any;
-  // map: google.maps.Map;
-
-  title = 'angular-gmap';
     @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
     map: google.maps.Map;
     lat = 40.73061;
     lng = -73.935242;
 
+    markers = [
+      {
+        position: new google.maps.LatLng(40.73061, 73.935242),
+        map: this.map,
+        title: "Marker 1"
+      },
+      {
+        position: new google.maps.LatLng(32.06485, 34.763226),
+        map: this.map,
+        title: "Marker 2"
+      }
+    ];
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-  //     const mapProperties = {
-  //     center: new google.maps.LatLng(35.2271, -80.8431),
-  //     zoom: 15,
-  //     mapTypeId: google.maps.MapTypeId.ROADMAP
-  //   };
-  //     this.map = new google.maps.Map(this.mapElement.nativeElement,mapProperties);
- }
+
+  }
 
   loginpage(){
     this.router.navigate(['/login']);
