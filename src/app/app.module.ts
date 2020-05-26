@@ -15,6 +15,8 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { HomeComponent } from './home/home.component';
 import { appRoutes } from './routes';
 import { UserService } from './shared/user.service';
+import { MapdisplayComponent } from './home/mapdisplay/mapdisplay.component';
+import { MarkerinfoComponent } from './home/markerinfo/markerinfo.component';
 
 
 
@@ -28,6 +30,8 @@ import { UserService } from './shared/user.service';
     SignInComponent,
     SignUpComponent,
     HomeComponent,
+    MapdisplayComponent,
+    MarkerinfoComponent,
   ],
   imports: [
     BrowserModule,
