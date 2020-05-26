@@ -1,0 +1,7 @@
+#markerinfo{
+    height: 450px;
+    max-width: 50%;
+    margin: 20px;
+    border-color: red;
+    z-index: 1;
+}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {} from 'googlemaps';
 import { ViewChild } from '@angular/core';
 import { AfterViewInit,ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mapdisplay',
@@ -34,9 +35,10 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
     center: {lat:40.67809,lng:53.833938},
     zoom: 8
    };
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    
   }
 
   ngAfterViewInit() {
@@ -58,6 +60,7 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
   
         marker.addListener("click", () => {
           infoWindow.open(marker.getMap(), marker);
+          this.router.navigate(['/home/info']);
         });
 
         marker.setMap(this.map);
