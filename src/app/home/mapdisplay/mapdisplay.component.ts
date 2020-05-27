@@ -35,6 +35,7 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
     center: {lat:40.67809,lng:53.833938},
     zoom: 8
    };
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -47,13 +48,22 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
 
   mapInitializer() {
       this.map = new google.maps.Map(this.gmap.nativeElement,this.mapOptions);
+
+      var bounds = new google.maps.LatLngBounds();
+
       this.markers.forEach((props) => {
+
         const marker = new google.maps.Marker({
           position: props.position,
           map:  props.map,
           title: props.title
         });
-  
+
+       
+
+        bounds.extend(marker.getPosition()); 
+        this.map.fitBounds(bounds);
+
         const infoWindow = new google.maps.InfoWindow({
           content: marker.getTitle()
         });
@@ -63,7 +73,9 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
         });
 
         marker.setMap(this.map);
-      });
-  }
 
+      });
+
+  }
 }
+ 
