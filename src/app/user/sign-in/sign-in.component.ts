@@ -39,7 +39,6 @@ export class SignInComponent implements OnInit {
       this.password = this.signinForm.value.loginpassword;
 
       var id = this.newSignedService.getItem(this.loginUserName);
-      console.log(id);
       if(id == false){
         this.userNameError = true;
         this.isLoginError = false;
