@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from 'src/app/shared/user.service';
+import { UserService } from '../../shared/user.service';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
