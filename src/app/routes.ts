@@ -11,7 +11,7 @@ export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent,
       children: [
           {path:'',component: MapdisplayComponent, outlet:'mapsdisplay'},
-          {path: 'info',component: MarkerinfoComponent, outlet:'markerinfo'}
+          {path: '',component: MarkerinfoComponent, outlet:'markerinfo'},
       ]
     },
     {
