@@ -10,8 +10,9 @@ import { MarkerinfoComponent } from './home/markerinfo/markerinfo.component';
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent,
       children: [
-          {path:'',component: MapdisplayComponent, outlet:'mapsdisplay'},
-          {path: '',component: MarkerinfoComponent, outlet:'markerinfo'},
+          {path:'',component: MapdisplayComponent, outlet:'mapsdisplay',
+              children:[{path: 'info',component: MarkerinfoComponent, outlet:'markerinfo'}]   
+            }        
       ]
     },
     {
