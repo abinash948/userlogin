@@ -60,7 +60,6 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
   
         marker.addListener("click", () => {
           infoWindow.open(marker.getMap(), marker);
-          this.router.navigate(['/home/info']);
         });
 
         marker.setMap(this.map);
