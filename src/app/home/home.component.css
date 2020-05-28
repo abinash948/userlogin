@@ -1,0 +1,8 @@
+.info{
+    height: 400px;
+    width: 55%;
+    border: solid 3px black;
+    float: left;
+    margin: 30px 30px 30px 0px;
+    /* display: inline-block; */
+}

@@ -9,7 +9,7 @@ import { MapdisplayComponent } from './home/mapdisplay/mapdisplay.component';
 
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent,
-      children: [{path:'',component: MapdisplayComponent}]
+      children: [{path:'',component: MapdisplayComponent, outlet:'markerdisplay'}]
     },
     {
         path: 'signup', component: UserComponent,

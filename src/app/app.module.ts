@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { appRoutes } from './routes';
 import { UserService } from './shared/user.service';
 import { MapdisplayComponent } from './home/mapdisplay/mapdisplay.component';
+import { MarkerinfoService } from './home/markerinfo.service';
 
 
 
@@ -38,7 +39,7 @@ import { MapdisplayComponent } from './home/mapdisplay/mapdisplay.component';
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
     ],
-  providers: [ UserService],
+  providers: [ UserService, MarkerinfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
