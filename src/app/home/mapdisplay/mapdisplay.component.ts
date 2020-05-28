@@ -68,13 +68,12 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
         const infoWindow = new google.maps.InfoWindow({
           content: marker.getTitle()
         });
-        
-        var currCenter = this.map.getCenter();
 
         marker.addListener("click", () => {
 
           google.maps.event.trigger(this.map,'resize');
-          this.map.setCenter(currCenter);
+          this.map.setCenter(marker.getPosition());
+          setTimeout(()=>{infoWindow.close()},3000);
 
           infoWindow.open(marker.getMap(), marker);
 
