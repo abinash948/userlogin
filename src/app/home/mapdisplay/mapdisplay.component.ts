@@ -37,10 +37,12 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
     zoom: 8
    };
 
-  constructor(private router: Router, private markerService: MarkerinfoService) { }
+  constructor(private router: Router, 
+              private markerService: MarkerinfoService, 
+              private markerContentService: MarkerinfoService) { }
 
   ngOnInit(): void {
-    
+      
   }
 
   ngAfterViewInit() {
@@ -73,7 +75,11 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
 
           google.maps.event.trigger(this.map,'resize');
           this.map.setCenter(currCenter);
+
           infoWindow.open(marker.getMap(), marker);
+
+          var mrkrcontent = infoWindow.getContent();
+          this.markerContentService.markerContent.next(mrkrcontent);
 
           this.markerService.displayInfo.next(true);
         });

@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 export class MarkerinfoService {
 
   displayInfo = new Subject<boolean>();
+  markerContent = new Subject<any>();
   
   constructor() { }
 }

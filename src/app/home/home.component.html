@@ -11,5 +11,10 @@
     </div>
 </nav>
 <div [class.large]="large" [class.small]="!large"><router-outlet name="markerdisplay"></router-outlet></div>
-<div [class.info]="markerinfo"></div>
+<div [class.info]="markerinfo">
+  <div *ngIf="markerinfo">{{message}}</div>
+  <div class="btn"><button *ngIf="markerinfo" type="button" class="btn btn-primary" (click)="onCancel()"
+    ><span class="glyphicon glyphicon-remove"></span>
+    </button></div>
+</div>
 
