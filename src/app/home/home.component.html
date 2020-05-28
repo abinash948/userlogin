@@ -10,6 +10,6 @@
       </div>
     </div>
 </nav>
-<div><router-outlet name="markerdisplay"></router-outlet></div>
+<div [class.large]="large" [class.small]="!large"><router-outlet name="markerdisplay"></router-outlet></div>
 <div [class.info]="markerinfo"></div>
 

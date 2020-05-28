@@ -13,7 +13,6 @@ import { MarkerinfoService } from '../markerinfo.service';
 export class MapdisplayComponent implements OnInit, AfterViewInit {
   @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
   map: google.maps.Map;
-  large: boolean = true;
   
   markers = [
     {
@@ -71,7 +70,7 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
         var currCenter = this.map.getCenter();
 
         marker.addListener("click", () => {
-          this.large=false;
+
           google.maps.event.trigger(this.map,'resize');
           this.map.setCenter(currCenter);
           infoWindow.open(marker.getMap(), marker);

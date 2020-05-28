@@ -10,11 +10,13 @@ import { MarkerinfoService } from './markerinfo.service';
 })
 export class HomeComponent implements OnInit{
   markerinfo: boolean = false;
+  large: boolean = true;
   constructor(private router: Router,private markerService: MarkerinfoService) { }
 
   ngOnInit(): void {
       this.markerService.displayInfo.subscribe((data)=>{
         this.markerinfo= data;
+        this.large= !data;
       })
   }
   loginpage(){

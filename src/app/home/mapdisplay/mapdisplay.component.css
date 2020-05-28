@@ -3,11 +3,4 @@
     border: solid 3px #9e70ba; 
     margin: 30px; 
 }
-.large {
-    max-width: auto;
-}
 
-.small {
-    width: 45%;
-    float: left;
-}
