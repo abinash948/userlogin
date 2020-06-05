@@ -17,6 +17,8 @@ import { appRoutes } from './routes';
 import { UserService } from './shared/user.service';
 import { MapdisplayComponent } from './home/mapdisplay/mapdisplay.component';
 import { MarkerinfoService } from './home/markerinfo.service';
+import { DetailsComponent } from './details/details.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 
 
@@ -30,7 +32,9 @@ import { MarkerinfoService } from './home/markerinfo.service';
     SignInComponent,
     SignUpComponent,
     HomeComponent,
-    MapdisplayComponent
+    MapdisplayComponent,
+    DetailsComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
