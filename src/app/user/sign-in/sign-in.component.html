@@ -4,8 +4,6 @@
 <div *ngIf="userNameError" class="loginerror">
     Please Sign up.Then Login!
 </div>
-<!-- <p>{{newUser}}</p> -->
-<p *ngIf="newUser" class="success-signedup"> Successfully signed up. Please login again! </p>  
 <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
    <div class="form-group">
        <label for="username"> <h4> Username </h4></label>
