@@ -3,7 +3,7 @@ import {} from 'googlemaps';
 import { ViewChild } from '@angular/core';
 import { AfterViewInit,ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { MarkerinfoService } from '../markerinfo.service';
+
 
 
 @Component({
@@ -42,9 +42,7 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
     zoom: 8
    };
 
-  constructor(private router: Router, 
-              private markerService: MarkerinfoService, 
-              private markerContentService: MarkerinfoService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
       
