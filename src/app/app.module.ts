@@ -16,9 +16,8 @@ import { HomeComponent } from './home/home.component';
 import { appRoutes } from './routes';
 import { UserService } from './shared/user.service';
 import { MapdisplayComponent } from './home/mapdisplay/mapdisplay.component';
-import { MarkerinfoService } from './home/markerinfo.service';
-import { DetailsComponent } from './details/details.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { DetailsComponent } from './home/details/details.component';
+import { UserListComponent } from './home/user-list/user-list.component';
 
 
 
@@ -43,7 +42,7 @@ import { UserListComponent } from './user-list/user-list.component';
     HttpClientModule,
     RouterModule.forRoot(appRoutes)
     ],
-  providers: [ UserService, MarkerinfoService],
+  providers: [ UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,17 +4,18 @@ import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { SignInComponent } from './user/sign-in/sign-in.component';
 import { MapdisplayComponent } from './home/mapdisplay/mapdisplay.component';
-import { DetailsComponent } from './details/details.component';
-import { UserListComponent } from './user-list/user-list.component';
+import { DetailsComponent } from './home/details/details.component';
+import { UserListComponent } from './home/user-list/user-list.component';
 
 
 
 export const appRoutes: Routes = [
     { path: 'home', component: HomeComponent,
-      children: [{path:'',component: MapdisplayComponent, outlet:'markerdisplay'}]
+      children: 
+      [{path:'',component: MapdisplayComponent},
+      { path: 'details', component: DetailsComponent},
+      { path: 'userlist', component: UserListComponent}]
     },
-    { path: 'details', component: DetailsComponent,outlet:'detailsdisplay'},
-    { path: 'userlist', component: UserListComponent, outlet:'userlistdisplay'},
     {
         path: 'signup', component: UserComponent,
         children: [{ path: '', component: SignUpComponent }]

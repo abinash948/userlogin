@@ -15,8 +15,8 @@
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="nav navbar-nav">
           <li><a routerLink="/home"> Home </a></li>
-          <li><a> Register Details </a></li>
-          <li><a> User's List </a></li>
+          <li><a routerLink="/home/details"> Register Details </a></li>
+          <li><a routerLink="/home/userlist"> User's List </a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><button style="cursor: pointer;" class="btn btn-default navbar-btn" id="logout"
@@ -28,22 +28,12 @@
   <div class="sidebar-menu" [class.sidenav]="show">
     <ul class="menu">
       <li><a routerLink="/home"> Home </a></li>
-      <li><a> Register Details </a></li>
-      <li><a> User's List </a></li>
+      <li><a routerLink="/home/details"> Register Details </a></li>
+      <li><a routerLink="/home/userlist"> User's List </a></li>
       <li><a routerLink="/login"> Logout </a></li>
     </ul>
   </div>
-  <div [class.large]="large" [class.small]="!large">
-    <router-outlet name="markerdisplay"></router-outlet>
-  </div>
-  <div [class.info]="markerinfo">
-    <div *ngIf="markerinfo">
-      {{message}}
-    </div>
-    <div class="infocancel">
-      <button *ngIf="markerinfo" type="button" class="btn btn-default" id="close-btn" (click)="onCancel()">
-              <span class="glyphicon glyphicon-remove"></span>
-      </button>
-    </div>
+  <div>
+    <router-outlet></router-outlet>
   </div>
 </div>

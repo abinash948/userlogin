@@ -5,6 +5,7 @@ import { AfterViewInit,ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { MarkerinfoService } from '../markerinfo.service';
 
+
 @Component({
   selector: 'app-mapdisplay',
   templateUrl: './mapdisplay.component.html',
@@ -13,6 +14,10 @@ import { MarkerinfoService } from '../markerinfo.service';
 export class MapdisplayComponent implements OnInit, AfterViewInit {
   @ViewChild('mapContainer', { static: false }) gmap: ElementRef;
   map: google.maps.Map;
+
+  markerinfo: boolean = false;
+  large: boolean = true;
+  message: string;
   
   markers = [
     {
@@ -77,16 +82,22 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
 
           infoWindow.open(marker.getMap(), marker);
 
-          var mrkrcontent = infoWindow.getContent();
-          this.markerContentService.markerContent.next(mrkrcontent);
+          var mrkrcontent = infoWindow.getContent().toString();
+          this.message = mrkrcontent;
 
-          this.markerService.displayInfo.next(true);
+          this.markerinfo = true;
+          this.large = false;
         });
 
         marker.setMap(this.map);
 
       });
 
+  }
+  
+  onCancel(){
+    this.markerinfo = false;
+    this.large = true;
   }
 }
  

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
 import { Router } from '@angular/router';
-import { MarkerinfoService } from './markerinfo.service';
+
 
 
 
@@ -10,40 +10,23 @@ import { MarkerinfoService } from './markerinfo.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, AfterViewInit{
-  markerinfo: boolean = false;
-  large: boolean = true;
-  message: string;
+  
   show: boolean = false;
 
-  constructor(private router: Router,
-              private markerService: MarkerinfoService,
-              private contentService: MarkerinfoService) { }
+  constructor(private router: Router) { }
 
-  @ViewChild('body') body: ElementRef;
+  // @ViewChild('body') body: ElementRef;
   ngOnInit(): void {
-      this.markerService.displayInfo.subscribe((data)=>{
-        this.markerinfo= data;
-        this.large= !data;
-      });
-
-      this.contentService.markerContent.subscribe((content)=>{
-        this.message = content;
-      });
   }
 
   ngAfterViewInit(){
-      this.body.nativeElement.addListener('click',()=>{
-        this.show=false;
-      });
+      // this.body.nativeElement.addListener('click',()=>{
+      //   this.show=false;
+      // });
   }
 
   loginpage(){
     this.router.navigate(['/login']);
-  }
-
-  onCancel(){
-    this.markerinfo = false;
-    this.large = true;
   }
 
   onToggle(){
