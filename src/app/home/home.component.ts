@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer2} from '@angular/core';
 import { Router } from '@angular/router';
 
 
@@ -7,20 +7,25 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  host: {'(document:click)': 'onClick($event)'}
 })
 export class HomeComponent implements OnInit, AfterViewInit{
   
   show: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private _eref: ElementRef, private renderer: Renderer2) { }
 
-  // @ViewChild('body') body: ElementRef;
+  @ViewChild('sidebar') sidebar: ElementRef;
   ngOnInit(): void {
+
   }
 
   ngAfterViewInit(){
-      // this.body.nativeElement.addListener('click',()=>{
+    if(this.show == true ){
+      this.onClick(event);
+    }  
+    // this.body.nativeElement.addListener('click',()=>{
       //   this.show=false;
       // });
   }
@@ -33,6 +38,15 @@ export class HomeComponent implements OnInit, AfterViewInit{
     this.show= true;
     }
   
+    
+    onClick(event: { target: any; }) {
+      if (this._eref.nativeElement.contains(event.target)){
+          // this.show= false;
+          this.renderer.setStyle(this.sidebar.nativeElement,'translate','-160px');
+        
+      }
+  }
+     
 }
 
   

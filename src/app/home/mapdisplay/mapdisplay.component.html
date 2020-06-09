@@ -2,7 +2,7 @@
     <div #mapContainer id="map"></div>
   </div>
   <div [class.info]="markerinfo">
-    <div *ngIf="markerinfo">
+    <div *ngIf="markerinfo" #displayContent>
       {{message}}
     </div>
     <div class="infocancel">
