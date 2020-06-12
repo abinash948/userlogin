@@ -1,21 +1,19 @@
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 col-lg-offset-3 col-md-offset-2">
-            <div class="card"> 
-                    <ul class="nav nav-tabs nav-justified">
-                      <li class="nav-item" routerLinkActive="active">
-                          <a id="sign-in" routerLink="/login" routerLinkActive='active'
-                          ><h4>Login</h4></a>
-                      </li>
-                      <li class="nav-item" routerLinkActive="active">
-                          <a id="sign-up" routerLink="/signup" routerLinkActive='active'
-                          ><h4>Sign-up</h4></a>
-                      </li>
-                    </ul>        
-                <div>
-                    <router-outlet></router-outlet>
-                </div>
-            </div>
-        </div>
+<div class="box col-xs-8 col-sm-8 col-md-8 col-lg-8">
+    <div class="content-box2">
+        <p id="account">Successfully Registered?</p>
+        <p id="para">Click here to login Again.</p>
+        <button type="button" class="btn btn-default" id="regbtn" (click)="toggle2()"> Login </button>
     </div>
+    <div class="content-box">
+        <p id="account">Don't have an account?</p>
+        <p id="para">Please Register here.</p>
+        <button type="button" class="btn btn-default" id="regbtn" (click)="toggle()"> Register </button>
+    </div> 
 </div>
+<div class="innerbox-1 col-xs-4 col-sm-4 col-md-4 col-lg-4" [@divstate]="state">
+    <router-outlet name="signin"></router-outlet>
+</div> 
+<div class="innerbox-2 col-xs-4 col-sm-4 col-md-4 col-lg-4" [@anotherstate]="state" >
+    <router-outlet name="register"></router-outlet>
+</div>
+

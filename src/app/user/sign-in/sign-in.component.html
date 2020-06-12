@@ -1,18 +1,25 @@
-<div *ngIf="isLoginError" class="loginerror">
-    Incorrect username or password
-</div>
-<div *ngIf="userNameError" class="loginerror">
-    Please Sign up.Then Login!
-</div>
+<div id="login"> Member Login </div>
 <form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
    <div class="form-group">
+    <div class="avatar">
+        <span id="ava" class="glyphicon glyphicon-user"></span>
+    </div>   
        <label for="username"> <h4> Username </h4></label>
-       <input type="text" class="form-control" id="userloginname" formControlName="userloginname" placeholder="Username" >
+       <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input type="text" class="form-control" id="userloginname" formControlName="userloginname" placeholder="Username">
+       </div>
    </div>
    <div class="form-group">
-        <label for="password"> <h4> Password </h4> </label>
-        <input type="text" class="form-control" id="loginpassword" formControlName="loginpassword"  placeholder="Password" >
+    <label for="password"> <h4> Password </h4> </label>
+       <div class="input-group">  
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input type="password" class="form-control" id="loginpassword" formControlName="loginpassword"  placeholder="Password">
+       </div>   
     </div>
-        <button [disabled]="!signinForm.valid" class="btn btn-primary" type="submit">Login</button>
+    <div id="login-btn">
+        <button [disabled]="!signinForm.valid" class="btn btn-default btn-block" type="submit">Login</button>
+    </div>       
 </form>
- 
+<div class="alert alert-danger loginerror" *ngIf="isLoginError" role="alert"> Incorrect Username or Password! </div>
+<div class="alert alert-danger loginerror" *ngIf="userNameError" role="alert"> Please Register.Then Login! </div>

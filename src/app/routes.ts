@@ -18,11 +18,11 @@ export const appRoutes: Routes = [
     },
     {
         path: 'signup', component: UserComponent,
-        children: [{ path: '', component: SignUpComponent }]
+        children: [{ path: '', component: SignUpComponent,outlet:'register' }]
     },
     {
         path: 'login', component: UserComponent,
-        children: [{ path: '', component: SignInComponent }]
+        children: [{ path: '', component: SignInComponent,outlet:'signin' }]
     },
    { path : '', redirectTo:'/login', pathMatch : 'full'}
     

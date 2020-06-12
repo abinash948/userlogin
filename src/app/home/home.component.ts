@@ -35,8 +35,13 @@ export class HomeComponent implements OnInit, AfterViewInit{
   }
 
   onToggle(){
-    this.show= true;
+    if(this.show == false){
+        this.show = true;
     }
+    else{
+        this.show = false;
+    }
+   }
   
     
     onClick(event: { target: any; }) {

@@ -15,6 +15,7 @@ export class SignUpComponent implements OnInit {
   
   signupForm: FormGroup;
   username: string;
+  isSignUpSuccess: boolean = false;
 
   constructor(private router: Router, private userService: UserService) { }
 
@@ -40,8 +41,9 @@ export class SignUpComponent implements OnInit {
     this.userService.addItem(this.username, newsignup);
 
     this.signupForm.reset();
+    this.isSignUpSuccess = true;
     //this.userService.newSignedUp.next(true);
-    this.router.navigate(['/login']);
+    // this.router.navigate(['/login']);
   }
 
   
