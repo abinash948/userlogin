@@ -4,39 +4,51 @@
 <form [formGroup]="signupForm" (ngSubmit)="onSignUp()">
     <div class="form-group">
         <label for="name"> <h4> Name </h4> </label>
-        <input type="name" class="form-control" id="name" formControlName="name" placeholder="Name">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-bishop"></i></span>
+            <input type="name" class="form-control" id="name" formControlName="name" placeholder="Name">
+        </div>
         <span
-              *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched"
-              class="help-block">
-              This field is required!
-        </span>
+                  *ngIf="!signupForm.get('name').valid && signupForm.get('name').touched"
+                  class="help-block">
+                  This field is required!
+            </span>
     </div>
     <div class="form-group">
         <label for="username"> <h4> Username </h4></label>
-        <input type="text" class="form-control" id="username" formControlName="username" placeholder="Username" >
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" class="form-control" id="username" formControlName="username" placeholder="Username" >
+        </div>
         <span
-              *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched"
-              class="help-block">
-              This field is required!
-        </span>
+                  *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched"
+                  class="help-block">
+                  This field is required!
+       </span>
     </div>
     <div class="form-group">
-        <label for="password"> <h4> Password </h4> </label>
-        <input type="text" class="form-control" id="password" formControlName="password" placeholder="Password" >
+        <label for="password"> <h4> Password </h4></label>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input type="text" class="form-control" id="password" formControlName="password" placeholder="Password" >
+        </div>
         <span
-              *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched"
-              class="help-block">
-              Minimum Length must be 6 characters!
-        </span>
+                  *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched"
+                  class="help-block">
+                  Minimum Length must be 6 characters!
+      </span>
     </div>
     <div class="form-group" id="regform">
         <label for="email"> <h4> Email </h4></label>
-        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email Id">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email Id">
+        </div>
         <span
-              *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
-              class="help-block">
-              Please enter a valid email!
-        </span>
+                  *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
+                  class="help-block">
+                  Please enter a valid email!
+       </span>   
     </div>
     <div class="signup-btn">
       <button [disabled]="!signupForm.valid" class="btn btn-default btn-block" type="submit">Sign Up</button>
