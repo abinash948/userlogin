@@ -26,12 +26,12 @@
 }
 .innerbox-2{
     background-color:  #fff;
-    width: 35%;
+    width: 32%;
     height: 86%;
     position: absolute;
     z-index: 1;
     top: 7%;
-    right: 16%;
+    right: 19%;
     -webkit-box-shadow: 5px 1px 31px 21px rgba(0,0,0,0.75);
     -moz-box-shadow: 5px 1px 31px 21px rgba(0,0,0,0.75);
     box-shadow: 5px 1px 31px 21px rgba(0,0,0,0.75);
