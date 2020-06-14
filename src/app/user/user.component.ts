@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
@@ -16,7 +15,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         opacity: 0,
         zIndex: 1
       })),
-      transition('in <=> out',animate(1000))
+      transition('in <=> out',animate(400))
     ]),
     trigger('anotherstate',[
       state('in',style({
@@ -27,7 +26,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         opacity: 1,
         zIndex: 4
       })),
-      transition('in <=> out',animate(1000))
+      transition('in <=> out',animate(400))
     ])
   ]
 })
@@ -35,17 +34,15 @@ export class UserComponent implements OnInit {
   
   state = 'in';
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
   toggle(){
     this.state = 'out';
-    this.router.navigate(['/signup']);
   }
   toggle2(){
     this.state = 'in';
-    this.router.navigate(['/login']);
   }
 
 }
