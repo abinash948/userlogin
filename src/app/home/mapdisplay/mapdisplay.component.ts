@@ -6,8 +6,6 @@ import { Router } from '@angular/router';
 import * as content from './content.json';
 
 
-
-
 @Component({
   selector: 'app-mapdisplay',
   templateUrl: './mapdisplay.component.html',
@@ -20,7 +18,10 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
   markerinfo: boolean = false;
   large: boolean = true;
   message: string;
-  currentmrkr = {};
+  currentmrkr: any = {};
+  mrkrcontent: any = (content as any).default;
+  // title: string;
+  // innercontent: string;
   
   
   markers = [
@@ -83,7 +84,7 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
 
           infoWindow.open(marker.getMap(), marker);
            
-          for(let item of content){
+          for(let item of this.mrkrcontent){
             if(marker.getTitle() == item.title){
               this.currentmrkr = item;
             }

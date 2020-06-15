@@ -2,12 +2,12 @@
     <div #mapContainer id="map"></div>
   </div>
   <div [class.info]="markerinfo">
-    <div *ngFor="let marker of currentmrkr" #displayContent>
-      <div>
-        {{ marker.title }}
+    <div>
+      <div class="title">
+        {{ currentmrkr.title }}
       </div>
-      <div>
-        {{ marker.innercontent }}
+      <div class="content">
+        {{ currentmrkr.innercontent }}
       </div>
     </div>
     <div class="infocancel">
