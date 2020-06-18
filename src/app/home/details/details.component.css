@@ -1,7 +1,58 @@
-.details{
-    height: 91.5%;
-    width: 40%;
+.container{
+    height: 500px;
+    width: 45%;
     position: absolute;
-    left: 30%;
+    left: 25%;
     top: 70px;
+    border: solid 2px black;
+    background-color: lightgray;
+}
+.form-group{
+    margin-bottom: 0px;
+}
+label{
+    margin-bottom: 0px;
+} 
+.form-control{
+    margin-bottom: 5px;
+}
+.user{
+    
+    height: 45px;
+    margin-top: 15px;
+    margin-left: 25%;
+    width: 50%;
+    display: block;
+    text-align: center;
+    font-size: large;
+    background-color: black;
+    color: floralwhite;
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+.name{
+    width: 45%;
+    display: inline-block;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    vertical-align: top;
+}
+.username{
+    width: 45%;
+    display: inline-block;
+    margin-left: 20px;
+}
+.email{
+    width: 45%;
+    display: inline-block;
+    margin-left: 15px;
+    vertical-align: top;
+}
+.password{
+    width: 45%;
+    display: inline-block;
+    margin-left: 20px;
+}
+.radio{
+    margin-bottom: 20px;
 }

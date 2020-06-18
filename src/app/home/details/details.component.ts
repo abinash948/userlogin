@@ -33,7 +33,7 @@ export class DetailsComponent implements OnInit {
 
   //  this.userService.addItem(this.username, newsignup);
 
-  //  this.signupForm.reset();
+   this.signupForm.reset();
   //  this.isSignUpSuccess = true;
    //this.userService.newSignedUp.next(true);
    // this.router.navigate(['/login']);

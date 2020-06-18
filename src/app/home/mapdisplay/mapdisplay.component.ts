@@ -20,8 +20,6 @@ export class MapdisplayComponent implements OnInit, AfterViewInit {
   message: string;
   currentmrkr: any = {};
   mrkrcontent: any = (content as any).default;
-  // title: string;
-  // innercontent: string;
   
   
   markers = [

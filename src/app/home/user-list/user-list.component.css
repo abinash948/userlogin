@@ -1,0 +1,28 @@
+.user-table{
+    top: 70px;
+    position: absolute;
+    left: 22%;
+    width: 60%;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.75);
+    height: auto;
+}
+tr:hover{
+    background-color: #ddd;
+}
+th{
+    text-align: center;
+    border-collapse: collapse;
+    padding: 15px;
+    color: white;
+    background-color: black;
+}
+table, td {
+    border: 1px solid grey;
+    border-collapse: collapse;  
+    padding: 5px;
+ }
+.serial{
+    width: 10%;
+}
