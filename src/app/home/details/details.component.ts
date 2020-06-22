@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { CreateUser } from'../../shared/createUser.model';
+import { FormService } from '../form.service';
 
 @Component({
   selector: 'app-details',
@@ -8,35 +10,39 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class DetailsComponent implements OnInit {
 
-  signupForm: FormGroup;
-  username: string;
+  createUserForm: FormGroup;
+  userCreated: boolean = false;
 
-  constructor() { }
+  constructor(private  formService: FormService) { }
 
   ngOnInit(): void {
-    this.signupForm = new FormGroup({
+    this.createUserForm = new FormGroup({
       'name': new FormControl(null, Validators.required),
       'username': new FormControl(null, Validators.required),
       'password': new FormControl(null, [Validators.required,Validators.minLength(6)]),
-      'email': new FormControl(null,[Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)])
+      'email': new FormControl(null,[Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]),
+      'gender': new FormControl(null,Validators.required)
     });
   }
-  onSignUp(){
-    this.username =  this.signupForm.value.username;
+  onCreateUser(){
 
-    // const newsignup: User = {
-    //   name: this.signupForm.value.name,
-    //   username: this.signupForm.value.username,
-    //   password: this.signupForm.value.password,
-    //   email: this.signupForm.value.email
-    // }
-
-  //  this.userService.addItem(this.username, newsignup);
-
-   this.signupForm.reset();
-  //  this.isSignUpSuccess = true;
+    const newsignup: CreateUser = {
+      name: this.createUserForm.value.name,
+      username: this.createUserForm.value.username,
+      password: this.createUserForm.value.password,
+      email: this.createUserForm.value.email,
+      gender: this.createUserForm.value.gender
+    }
+     
+    this.userCreated = true;
+    this.formService.createNewUser.next(newsignup);
+    this.createUserForm.reset();
+  
    //this.userService.newSignedUp.next(true);
    // this.router.navigate(['/login']);
  }
 
+ changeGender(e) {
+  e.target.value;
+}
 }

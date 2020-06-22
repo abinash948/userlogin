@@ -8,7 +8,8 @@
     background-color: lightgray;
 }
 .form-group{
-    margin-bottom: 0px;
+    margin-bottom: 15px;
+    height: 80px;
 }
 label{
     margin-bottom: 0px;
@@ -53,6 +54,58 @@ label{
     display: inline-block;
     margin-left: 20px;
 }
-.radio{
+.radioclass{
     margin-bottom: 20px;
+    width: 100%;
 }
+input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+.help-block{
+    color:  red;
+}
+#male #female #other{
+    height: 10px !important; 
+}
+.radio{
+    font-size: 16px;
+    width: 60px;
+    display: inline-block;
+    margin-left: 2px;
+}
+#font{
+    width: 40px !important;
+}
+.crt-div-btn{
+    width: 40%;
+    position: absolute;
+    left: 30%;
+}
+.btn-default:hover{
+    background-color: black;
+    color: whitesmoke;
+    border: black;
+}
+.form-controlled{
+    display: inline-block;
+    width: 20px;
+    margin-left: 10px;
+    font-size: 20px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+#height{
+    font-size: 20px;
+    margin-left: 16px;
+}
+.userCreated{
+    position: absolute;
+    margin-top: 50px;
+    left: 17%;
+    
+}
+
