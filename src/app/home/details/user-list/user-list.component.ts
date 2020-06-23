@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormService } from '../form.service';
 import { CreateUser } from 'src/app/shared/createUser.model';
+import { FormService } from '../../form.service';
+
 
 @Component({
   selector: 'app-user-list',
@@ -14,7 +15,7 @@ export class UserListComponent implements OnInit {
   constructor(private formService: FormService) { }
 
   ngOnInit(): void {
-    this.formService.createNewUser.subscribe((data: CreateUser) =>{
+    this.formService.createNewUser.subscribe((data) =>{
       console.log(data);
       // this.dynamicArray.push(data);
       // console.log(this.dynamicArray);
@@ -23,3 +24,10 @@ export class UserListComponent implements OnInit {
   }
 
 }
+
+
+
+
+  
+
+  

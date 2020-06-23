@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { User } from './user.model';
+import { CreateUser } from './createUser.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,8 @@ export class UserService {
         return password;
       }
   }
+
+  
 
   // validator(){
   //   var archive: string[];

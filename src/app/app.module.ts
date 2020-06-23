@@ -18,7 +18,7 @@ import { appRoutes } from './routes';
 import { UserService } from './shared/user.service';
 import { MapdisplayComponent } from './home/mapdisplay/mapdisplay.component';
 import { DetailsComponent } from './home/details/details.component';
-import { UserListComponent } from './home/user-list/user-list.component';
+import { UserListComponent } from './home/details/user-list/user-list.component';
 
 
 
