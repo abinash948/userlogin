@@ -9,6 +9,7 @@ import { CreateUser } from '../shared/createUser.model';
 export class FormService {
 
   createNewUser = new Subject<Object>();
+  addRow = new Subject<boolean>();
 
   constructor() { }
 

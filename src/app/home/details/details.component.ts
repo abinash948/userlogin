@@ -35,7 +35,9 @@ export class DetailsComponent implements OnInit {
     }
      
     this.userCreated = true;
-    this.formService.createNewUser.next(newsignup);
+    // this.formService.createNewUser.next(newsignup);
+    sessionStorage.setItem("newsignup",JSON.stringify(newsignup));
+    this.formService.addRow.next(true);
     this.createUserForm.reset();
   
    //this.userService.newSignedUp.next(true);
