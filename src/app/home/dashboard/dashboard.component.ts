@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
         responsive: true,
         title: {
           display: true,
-          text: 'Combo Bar and line Chart'
+          text: 'Bar Chart'
         },
       },
       data: {

@@ -1,0 +1,72 @@
+.chart-display{
+    background-color: rgba(191,185,191,1);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+.bar{
+    display: inline-block;
+    margin-top: 80px;
+    margin-left: 180px;
+    width: 27%;
+    height: 200px;
+    background-color: white;
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+}
+.pie{
+    display: inline-block;
+    margin-top: 80px;
+    margin-left: 15px;
+    width: 27%;
+    height: 200px;
+    background-color: white;
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+}
+.doughnut{
+    display: inline-block;
+    margin-top: 80px;
+    margin-left: 15px;
+    width: 27%;
+    height: 200px;
+    background-color: white;
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+}
+.line{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 180px;
+    width: 27%;
+    height: 200px;
+    background-color: white;
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+}
+.radar{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 15px;
+    width: 27%;
+    height: 200px;
+    background-color: white;
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+}
+.horizontalbar{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 15px;
+    width: 27%;
+    height: 200px;
+    background-color: white;
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.75);
+}
