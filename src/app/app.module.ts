@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StorageServiceModule } from 'ngx-webstorage-service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-
+import { ChartsModule } from 'ng2-charts';
 
 
 
@@ -19,6 +19,7 @@ import { UserService } from './shared/user.service';
 import { MapdisplayComponent } from './home/mapdisplay/mapdisplay.component';
 import { DetailsComponent } from './home/details/details.component';
 import { UserListComponent } from './home/details/user-list/user-list.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
 
 
 
@@ -34,7 +35,8 @@ import { UserListComponent } from './home/details/user-list/user-list.component'
     HomeComponent,
     MapdisplayComponent,
     DetailsComponent,
-    UserListComponent
+    UserListComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { UserListComponent } from './home/details/user-list/user-list.component'
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ChartsModule,
     RouterModule.forRoot(appRoutes)
     ],
   providers: [ UserService],
